@@ -1,50 +1,71 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Forms</title>
-    </head>
-    <body>
-        <fieldset align="center">
-            <legend>Update Information</legend>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forms</title>
+</head>
+<style>
+    body {
+        padding: 10px;
+        background-color: #75ed65;
+        margin: 10px 20px;
+    }
+
+    div {
+        padding: 10px;
+    }
+
+    fieldset {
+        background-color: #aefccc;
+    }
+</style>
+
+<body>
+    <fieldset align="center">
+        <legend>Update Information</legend>
         <form action="">
-            <p>Your Email:
+            <div style="font-size: small;">Your Email:
                 <input disabled type="email" value="abdulrafay@gmail.com" name="" id="">
-            </p>
-            <p>Your Password
+            </div>
+            <div style="font-size: small;">Your Password
                 <input disabled type="text" value="abcd123">
-            </p>
-            <p>
+            </div>
+            <div style="font-size: small;">
                 new PassWord
                 <input type="password" name="" id="" placeholder="Enter New PassWord" required>
-            </p>
-            <p>Your DOB
+            </div>
+            <div style="font-size: small;">Your DOB
                 <input disabled type="date" value="none" name="" id="">
-            </p>
-            <p>
+            </div>
+            <div style="font-size: small;">
                 New DOB
                 <input type="date" name="DOB" id="" placeholder="New DOB" required>
-            </p>
-            <label >Age
+            </div>
+            <label>Age
                 <input type="number" name="Age" id="" required>
             </label>
-            <p>Gender
+            <div style="font-size: small;">Gender
                 <label for="Male"><input type="radio" name="Gender" value="Male" checked required> Male</label>
                 <label for="Female"><input type="radio" name="Gender" value="Female" required> Female</label>
-            </p>
-            <p>Country
+            </div>
+            <div style="font-size: small;">Country
                 <select name="Country" required>
                     <option value="" disabled selected>Select the country</option>
                     <option value="Pakistan">Pakistan</option>
                     <option value="india">india</option>
                 </select>
-            </p>
+            </div>
             <input type="submit" value="submit">
-            <p>Add a review
+            <div style="font-size: small;">Add a review
                 <textarea name="" id="" placeholder="Enter Comments" cols="10" rows="3"></textarea>
-            </p>
-        </fieldset>
-        </form>
-    </body>
+            </div>
+            <iframe width="450" height="350" src="http://maps.google.co.uk/maps?q=omni+karting+karachi
+            &amp;output=embed">
+            </iframe>
+    </fieldset>
+    </form>
+</body>
+
 </html>
