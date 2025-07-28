@@ -16,7 +16,7 @@ body{
     height: 100vh;
     max-width: 1000px;
     margin: 0 auto;
-    padding: 0 20px;
+    padding: 0 20px 0 10px;
 }
 
 .left{
@@ -25,7 +25,7 @@ body{
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
-    padding-right: 32px;
+    padding-right: 24px;
 }
 
 .logo{
@@ -46,18 +46,24 @@ body{
 
 .right{
     width: 396px;
-    background-color: white;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1), 0 8px 16px rgba(0, 0, 0, 0.1);
     padding: 20px;
     display: flex;
     flex-direction: column;
+}
+.con{
+    padding: 20px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1), 0 8px 16px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
 }
 
 .right form{
     display: flex;
     flex-direction: column;
-    gap: 12px;
+    gap: 15px;
     width: 100%;
 }
 
@@ -98,7 +104,6 @@ body{
     font-size: 14px;
     color: #0866ff;
     text-decoration: none;
-    margin: 16px 0;
 }
 
 #forgotten-account:hover{
@@ -108,7 +113,7 @@ body{
 hr{
     border: none;
     border-top: 1px solid #dadde1;
-    margin: 20px 0;
+    margin: 8px 0;
 }
 
 #create-button{
@@ -151,27 +156,37 @@ hr{
         justify-content: center;
         align-items: center;
         flex-direction: column;
-
+        padding: 20px;
+    }
+    .left{
+        width: 100%;
+        align-items: center;
+        padding-right: 0;
+        margin-bottom: 20px;
     }
     #left-h2{
         display: none;
     }
     .logo{
-        display: flex;
-        justify-content: center;
-        align-items: center;
         font-size: 4rem;
-        margin-bottom: 25px;
+        margin-bottom: 5px;
+        text-align: center;
     }
 }
 @media screen and (max-width: 425px) {
+    .parent{
+        padding: 10px;
+    }
     .logo{
         font-size: 3rem;
-        align-self: center;
+        text-align: center;
         width: 100%;
     }
     
     .right{
         width: 100%;
+    }
+    .con{
+        padding: 15px;
     }
 }
