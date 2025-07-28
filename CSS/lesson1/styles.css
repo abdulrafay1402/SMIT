@@ -1,0 +1,177 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+}
+
+body{
+    background-color: #f0f2f5;
+}
+
+.parent{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.left{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding-right: 32px;
+}
+
+.logo{
+    color: #0866ff;
+    font-size: 4rem;
+    font-weight: bold;
+    margin-bottom: 0;
+    line-height: 1;
+}
+
+.left h2{
+    font-size: 28px;
+    font-weight: normal;
+    line-height: 32px;
+    color: #1c1e21;
+    margin-top: 0;
+}
+
+.right{
+    width: 396px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1), 0 8px 16px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.right form{
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    width: 100%;
+}
+
+#email-input, #password-input{
+    padding: 14px 16px;
+    border-radius: 6px;
+    border: 1px solid #dddfe2;
+    font-size: 17px;
+    width: 100%;
+    background-color: #ffffff;
+}
+
+#email-input:focus, #password-input:focus{
+    outline: none;
+    border-color: #0866ff;
+    box-shadow: 0 0 0 2px #e7f3ff;
+}
+
+#login-button{
+    background-color: #0866ff;
+    color: white;
+    border: none;
+    padding: 12px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 20px;
+    font-weight: bold;
+    width: 100%;
+    margin-top: 8px;
+}
+
+#login-button:hover{
+    background-color: #1877f2;
+}
+
+#forgotten-account{
+    text-align: center;
+    font-size: 14px;
+    color: #0866ff;
+    text-decoration: none;
+    margin: 16px 0;
+}
+
+#forgotten-account:hover{
+    text-decoration: underline;
+}
+
+hr{
+    border: none;
+    border-top: 1px solid #dadde1;
+    margin: 20px 0;
+}
+
+#create-button{
+    background-color: #42b72a;
+    color: white;
+    border: none;
+    padding: 12px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 17px;
+    font-weight: bold;
+    width: fit-content;
+    align-self: center;
+}
+
+#create-button:hover{
+    background-color: #36a420;
+}
+
+.create-page{
+    text-align: center;
+    margin-top: 28px;
+    font-size: 14px;
+    color: #1c1e21;
+}
+
+.create-page-link{
+    color: #000;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.create-page-link:hover{
+    text-decoration: underline;
+}
+
+@media screen and (max-width: 768px) {
+    .parent{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+
+    }
+    #left-h2{
+        display: none;
+    }
+    .logo{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 4rem;
+        margin-bottom: 25px;
+    }
+}
+@media screen and (max-width: 425px) {
+    .logo{
+        font-size: 3rem;
+        align-self: center;
+        width: 100%;
+    }
+    
+    .right{
+        width: 100%;
+    }
+}
