@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Assignment Link Manager</title>
+    <title>JavaScript Assignments Portfolio</title>
     <style>
         * {
             margin: 0;
@@ -51,83 +51,25 @@
             padding: 20px;
         }
 
-        .form-section {
+        .intro-section {
             background: #2a3a4a;
             padding: 25px 20px;
             border-radius: 10px;
             margin-bottom: 30px;
             border: 1px solid #20b2aa;
+            text-align: center;
         }
 
-        .form-section h2 {
+        .intro-section h2 {
             color: #e0e0e0;
-            margin-bottom: 20px;
+            margin-bottom: 15px;
             font-size: 1.5rem;
         }
 
-        .form-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 15px;
-            margin-bottom: 20px;
-        }
-
-        .form-group {
-            display: flex;
-            flex-direction: column;
-        }
-
-        .form-group label {
-            font-weight: 600;
+        .intro-section p {
             color: #b8b8b8;
-            margin-bottom: 8px;
-            font-size: 0.9rem;
-        }
-
-        .form-group input, .form-group select, .form-group textarea {
-            padding: 12px;
-            border: 2px solid #20b2aa;
-            border-radius: 8px;
-            font-size: 1rem;
-            transition: border-color 0.3s ease;
-            background: #1a2a3a;
-            color: #e0e0e0;
-        }
-
-        .form-group input:focus, .form-group select:focus, .form-group textarea:focus {
-            outline: none;
-            border-color: #ffa07a;
-            box-shadow: 0 0 0 3px rgba(255, 160, 122, 0.2);
-            background: #2a3a4a;
-        }
-
-        .btn {
-            background: linear-gradient(135deg, #20b2aa 0%, #ffa07a 100%);
-            color: white;
-            border: none;
-            padding: 12px 25px;
-            margin-top: 10px;
-            border-radius: 8px;
-            font-size: 1rem;
-            font-weight: 600;
-            cursor: pointer;
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
-            width: 100%;
-            text-align: center;
-            align-items: center;
-        }
-
-        .btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(32, 178, 170, 0.4);
-        }
-
-        .btn-secondary {
-            background: linear-gradient(135deg, #ffa07a 0%, #ff8c69 100%);
-        }
-
-        .btn-danger {
-            background: linear-gradient(135deg, #ff6b6b 0%, #ee5a52 100%);
+            font-size: 1.1rem;
+            line-height: 1.6;
         }
 
         .assignments-section {
@@ -138,39 +80,12 @@
             color: #e0e0e0;
             margin-bottom: 20px;
             font-size: 1.5rem;
-        }
-
-        .filters {
-            display: flex;
-            gap: 15px;
-            margin-bottom: 20px;
-            flex-wrap: wrap;
-        }
-
-        .filter-group {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        .filter-group label {
-            font-weight: 600;
-            color: #b8b8b8;
-            font-size: 0.9rem;
-        }
-
-        .filter-group select {
-            padding: 8px 12px;
-            border: 2px solid #20b2aa;
-            border-radius: 6px;
-            font-size: 0.9rem;
-            background: #1a2a3a;
-            color: #e0e0e0;
+            text-align: center;
         }
 
         .assignments-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
             gap: 20px;
         }
 
@@ -178,9 +93,10 @@
             background: #2a3a4a;
             border: 1px solid #20b2aa;
             border-radius: 12px;
-            padding: 20px;
+            padding: 25px;
             transition: transform 0.2s ease, box-shadow 0.2s ease;
             position: relative;
+            text-align: center;
         }
 
         .assignment-card:hover {
@@ -191,76 +107,42 @@
 
         .assignment-card h3 {
             color: #e0e0e0;
-            margin-bottom: 10px;
-            font-size: 1.2rem;
+            margin-bottom: 15px;
+            font-size: 1.3rem;
         }
 
         .assignment-card p {
             color: #b8b8b8;
-            margin-bottom: 8px;
-            font-size: 0.9rem;
-        }
-
-        .assignment-link {
-            color: #20b2aa;
-            text-decoration: none;
-            font-weight: 600;
-            word-break: break-all;
-        }
-
-        .assignment-link:hover {
-            text-decoration: underline;
-            color: #ffa07a;
-        }
-
-        .card-actions {
-            display: flex;
-            gap: 10px;
-            margin-top: 15px;
-        }
-
-        .btn-small {
-            padding: 8px 15px;
-            font-size: 0.85rem;
+            margin-bottom: 20px;
+            font-size: 1rem;
+            line-height: 1.5;
         }
 
         .chapter-badge {
             background: linear-gradient(135deg, #20b2aa 0%, #ffa07a 100%);
             color: white;
-            padding: 4px 12px;
+            padding: 6px 16px;
             border-radius: 20px;
-            font-size: 0.8rem;
+            font-size: 0.9rem;
             font-weight: 600;
             display: inline-block;
-            margin-bottom: 10px;
+            margin-bottom: 15px;
         }
 
-        .date-badge {
-            background: linear-gradient(135deg, #ffa07a 0%, #ff8c69 100%);
+        .view-btn {
+            background: linear-gradient(135deg, #20b2aa 0%, #ffa07a 100%);
             color: white;
-            padding: 4px 12px;
-            border-radius: 20px;
-            font-size: 0.8rem;
+            text-decoration: none;
+            padding: 12px 25px;
+            border-radius: 8px;
             font-weight: 600;
             display: inline-block;
-            margin-bottom: 10px;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
         }
 
-        .empty-state {
-            text-align: center;
-            padding: 60px 20px;
-            color: #b8b8b8;
-        }
-
-        .empty-state h3 {
-            font-size: 1.5rem;
-            margin-bottom: 10px;
-            color: #e0e0e0;
-        }
-
-        .empty-state p {
-            font-size: 1.1rem;
-            margin-bottom: 20px;
+        .view-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(32, 178, 170, 0.4);
         }
 
         .stats {
@@ -285,6 +167,19 @@
 
         .stat-card p {
             opacity: 0.9;
+            font-size: 0.9rem;
+        }
+
+        .footer {
+            background: #2a3a4a;
+            padding: 20px;
+            text-align: center;
+            border-top: 1px solid #20b2aa;
+            margin-top: 30px;
+        }
+
+        .footer p {
+            color: #b8b8b8;
             font-size: 0.9rem;
         }
 
@@ -314,13 +209,8 @@
                 padding: 15px;
             }
 
-            .form-section {
+            .intro-section {
                 padding: 20px 15px;
-            }
-
-            .form-grid {
-                grid-template-columns: 1fr;
-                gap: 12px;
             }
 
             .assignments-grid {
@@ -328,15 +218,8 @@
                 gap: 15px;
             }
 
-            .filters {
-                flex-direction: column;
-                gap: 12px;
-            }
-
-            .filter-group {
-                flex-direction: column;
-                align-items: flex-start;
-                gap: 5px;
+            .assignment-card {
+                padding: 20px;
             }
 
             .stats {
@@ -351,20 +234,6 @@
             .stat-card h3 {
                 font-size: 1.5rem;
             }
-
-            .assignment-card {
-                padding: 15px;
-            }
-
-            .card-actions {
-                flex-direction: column;
-                gap: 8px;
-            }
-
-            .btn-small {
-                width: 100%;
-                text-align: center;
-            }
         }
 
         @media (max-width: 480px) {
@@ -372,7 +241,7 @@
                 font-size: 1.5rem;
             }
 
-            .form-section h2,
+            .intro-section h2,
             .assignments-section h2 {
                 font-size: 1.3rem;
             }
@@ -386,265 +255,73 @@
 <body>
     <div class="container">
         <div class="header">
-            <h1>📚 Assignment Link Manager</h1>
-            <p>Organize and track your JavaScript assignments with ease</p>
+            <h1>📚 JavaScript Assignments Portfolio</h1>
+            <p>Showcasing my JavaScript learning journey and projects</p>
         </div>
 
         <div class="main-content">
             <!-- Statistics Section -->
             <div class="stats">
                 <div class="stat-card">
-                    <h3 id="totalAssignments">0</h3>
-                    <p>Total Assignments</p>
+                    <h3>2</h3>
+                    <p>Chapters Completed</p>
                 </div>
                 <div class="stat-card">
-                    <h3 id="totalChapters">0</h3>
-                    <p>Chapters Covered</p>
+                    <h3>2</h3>
+                    <p>Projects Built</p>
                 </div>
                 <div class="stat-card">
-                    <h3 id="recentAssignments">0</h3>
-                    <p>This Month</p>
+                    <h3>100%</h3>
+                    <p>Code Quality</p>
                 </div>
             </div>
 
-            <!-- Add Assignment Form -->
-            <div class="form-section">
-                <h2>➕ Add New Assignment</h2>
-                <form id="assignmentForm">
-                    <div class="form-grid">
-                        <div class="form-group">
-                            <label for="title">Assignment Title *</label>
-                            <input type="text" id="title" name="title" required placeholder="e.g., Chapter 1 Variables Exercise">
-                        </div>
-                        <div class="form-group">
-                            <label for="chapter">Chapter *</label>
-                            <input type="text" id="chapter" name="chapter" required placeholder="e.g., Chapter 1">  
-                        </div>
-                        <div class="form-group">
-                            <label for="date">Date *</label>
-                            <input type="date" id="date" name="date" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="link">Assignment Link *</label>
-                            <input type="url" id="link" name="link" required placeholder="https://example.com/assignment">
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label for="description">Description (Optional)</label>
-                        <textarea id="description" name="description" rows="3" placeholder="Brief description of the assignment..."></textarea>
-                    </div>
-                    <button type="submit" class="btn">Add Assignment</button>
-                </form>
+            <!-- Introduction Section -->
+            <div class="intro-section">
+                <h2>🚀 Welcome to My JavaScript Portfolio</h2>
+                <p>
+                    This portfolio showcases my JavaScript assignments and projects organized by chapters. 
+                    Each project demonstrates different concepts and techniques learned throughout my JavaScript journey. 
+                    Click on any project below to view the live demo and explore the code.
+                </p>
             </div>
 
             <!-- Assignments List -->
             <div class="assignments-section">
-                <h2>📋 Your Assignments</h2>
+                <h2>📋 My Projects</h2>
                 
-                <!-- Filters -->
-                <div class="filters">
-                    <div class="filter-group">
-                        <label for="filterChapter">Filter by Chapter:</label>
-                        <select id="filterChapter">
-                            <option value="">All Chapters</option>
-                            <option value="Chapter 1-3">Chapter 1-3</option>
-                            <option value="Chapter 4-9">Chapter 4-9</option>
-                            <option value="Chapter 10+">Chapter 10+</option>
-                            <option value="Project">Project</option>
-                            <option value="Practice">Practice</option>
-                        </select>
+                <div class="assignments-grid">
+                    <!-- Chapter 1-3 Assignment -->
+                    <div class="assignment-card">
+                        <div class="chapter-badge">Chapter 1-3</div>
+                        <h3>JavaScript Fundamentals</h3>
+                        <p>
+                            This project covers the fundamental concepts of JavaScript including variables, 
+                            data types, operators, and basic programming constructs. It demonstrates 
+                            core JavaScript syntax and basic problem-solving techniques.
+                        </p>
+                        <a href="Chapter1-3/index.html" target="_blank" class="view-btn">View Project</a>
                     </div>
-                    <div class="filter-group">
-                        <label for="sortBy">Sort by:</label>
-                        <select id="sortBy">
-                            <option value="date-desc">Date (Newest First)</option>
-                            <option value="date-asc">Date (Oldest First)</option>
-                            <option value="title">Title (A-Z)</option>
-                            <option value="chapter">Chapter</option>
-                        </select>
+
+                    <!-- Chapter 4-9 Assignment -->
+                    <div class="assignment-card">
+                        <div class="chapter-badge">Chapter 4-9</div>
+                        <h3>Advanced JavaScript Concepts</h3>
+                        <p>
+                            This project explores more advanced JavaScript concepts including functions, 
+                            objects, arrays, DOM manipulation, and event handling. It showcases 
+                            interactive web development techniques and modern JavaScript practices.
+                        </p>
+                        <a href="Chapter4-9/index.html" target="_blank" class="view-btn">View Project</a>
                     </div>
                 </div>
+            </div>
 
-                <!-- Assignments Grid -->
-                <div id="assignmentsGrid" class="assignments-grid">
-                    <!-- Assignments will be dynamically added here -->
-                </div>
-
-                <!-- Empty State -->
-                <div id="emptyState" class="empty-state" style="display: none;">
-                    <h3>No assignments yet!</h3>
-                    <p>Add your first assignment using the form above to get started.</p>
-                </div>
+            <!-- Footer -->
+            <div class="footer">
+                <p>© 2024 JavaScript Learning Portfolio | Built with HTML, CSS & JavaScript</p>
             </div>
         </div>
     </div>
-
-    <script>
-        class AssignmentManager {
-            constructor() {
-                this.assignments = JSON.parse(localStorage.getItem('assignments')) || [];
-                this.currentFilter = '';
-                this.currentSort = 'date-desc';
-                
-                this.initializeEventListeners();
-                this.renderAssignments();
-                this.updateStats();
-            }
-
-            initializeEventListeners() {
-                // Form submission
-                document.getElementById('assignmentForm').addEventListener('submit', (e) => {
-                    e.preventDefault();
-                    this.addAssignment();
-                });
-
-                // Filters
-                document.getElementById('filterChapter').addEventListener('change', (e) => {
-                    this.currentFilter = e.target.value;
-                    this.renderAssignments();
-                });
-
-                document.getElementById('sortBy').addEventListener('change', (e) => {
-                    this.currentSort = e.target.value;
-                    this.renderAssignments();
-                });
-
-                // Set default date to today
-                document.getElementById('date').valueAsDate = new Date();
-            }
-
-            addAssignment() {
-                const formData = new FormData(document.getElementById('assignmentForm'));
-                const assignment = {
-                    id: Date.now(),
-                    title: formData.get('title'),
-                    chapter: formData.get('chapter'),
-                    date: formData.get('date'),
-                    link: formData.get('link'),
-                    description: formData.get('description'),
-                    createdAt: new Date().toISOString()
-                };
-
-                this.assignments.push(assignment);
-                this.saveToLocalStorage();
-                this.renderAssignments();
-                this.updateStats();
-                this.resetForm();
-            }
-
-            deleteAssignment(id) {
-                if (confirm('Are you sure you want to delete this assignment?')) {
-                    this.assignments = this.assignments.filter(assignment => assignment.id !== id);
-                    this.saveToLocalStorage();
-                    this.renderAssignments();
-                    this.updateStats();
-                }
-            }
-
-            editAssignment(id) {
-                const assignment = this.assignments.find(a => a.id === id);
-                if (!assignment) return;
-
-                // Populate form with assignment data
-                document.getElementById('title').value = assignment.title;
-                document.getElementById('chapter').value = assignment.chapter;
-                document.getElementById('date').value = assignment.date;
-                document.getElementById('link').value = assignment.link;
-                document.getElementById('description').value = assignment.description || '';
-
-                // Remove the old assignment and add the updated one
-                this.assignments = this.assignments.filter(a => a.id !== id);
-                this.saveToLocalStorage();
-                this.renderAssignments();
-                this.updateStats();
-
-                // Scroll to form
-                document.querySelector('.form-section').scrollIntoView({ behavior: 'smooth' });
-            }
-
-            resetForm() {
-                document.getElementById('assignmentForm').reset();
-                document.getElementById('date').valueAsDate = new Date();
-            }
-
-            saveToLocalStorage() {
-                localStorage.setItem('assignments', JSON.stringify(this.assignments));
-            }
-
-            getFilteredAndSortedAssignments() {
-                let filtered = this.assignments;
-
-                // Apply filter
-                if (this.currentFilter) {
-                    filtered = filtered.filter(assignment => assignment.chapter === this.currentFilter);
-                }
-
-                // Apply sort
-                filtered.sort((a, b) => {
-                    switch (this.currentSort) {
-                        case 'date-desc':
-                            return new Date(b.date) - new Date(a.date);
-                        case 'date-asc':
-                            return new Date(a.date) - new Date(b.date);
-                        case 'title':
-                            return a.title.localeCompare(b.title);
-                        case 'chapter':
-                            return a.chapter.localeCompare(b.chapter);
-                        default:
-                            return 0;
-                    }
-                });
-
-                return filtered;
-            }
-
-            renderAssignments() {
-                const assignments = this.getFilteredAndSortedAssignments();
-                const grid = document.getElementById('assignmentsGrid');
-                const emptyState = document.getElementById('emptyState');
-
-                if (assignments.length === 0) {
-                    grid.style.display = 'none';
-                    emptyState.style.display = 'block';
-                    return;
-                }
-
-                grid.style.display = 'grid';
-                emptyState.style.display = 'none';
-
-                grid.innerHTML = assignments.map(assignment => `
-                    <div class="assignment-card">
-                        <div class="chapter-badge">${assignment.chapter}</div>
-                        <div class="date-badge">${new Date(assignment.date).toLocaleDateString()}</div>
-                        <h3>${assignment.title}</h3>
-                        <p><strong>Link:</strong> <a href="${assignment.link}" target="_blank" class="assignment-link">${assignment.link}</a></p>
-                        ${assignment.description ? `<p><strong>Description:</strong> ${assignment.description}</p>` : ''}
-                        <div class="card-actions">
-                            <button class="btn btn-secondary btn-small" onclick="assignmentManager.editAssignment(${assignment.id})">✏️ Edit</button>
-                            <button class="btn btn-danger btn-small" onclick="assignmentManager.deleteAssignment(${assignment.id})">🗑️ Delete</button>
-                        </div>
-                    </div>
-                `).join('');
-            }
-
-            updateStats() {
-                const totalAssignments = this.assignments.length;
-                const uniqueChapters = new Set(this.assignments.map(a => a.chapter)).size;
-                const currentMonth = new Date().getMonth();
-                const currentYear = new Date().getFullYear();
-                const recentAssignments = this.assignments.filter(a => {
-                    const assignmentDate = new Date(a.date);
-                    return assignmentDate.getMonth() === currentMonth && assignmentDate.getFullYear() === currentYear;
-                }).length;
-
-                document.getElementById('totalAssignments').textContent = totalAssignments;
-                document.getElementById('totalChapters').textContent = uniqueChapters;
-                document.getElementById('recentAssignments').textContent = recentAssignments;
-            }
-        }
-
-        // Initialize the application
-        const assignmentManager = new AssignmentManager();
-    </script>
 </body>
 </html>
