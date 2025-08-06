@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Development Portfolio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #1a0b2e 0%, #2d1b4e 50%, #4a2c7a 100%);
+            min-height: 100vh;
+            padding: 10px;
+            color: #e0e0e0;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            background: #2d1b4e;
+            border-radius: 15px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+            overflow: hidden;
+            border: 1px solid #ffd700;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #8a2be2 0%, #ffd700 100%);
+            color: white;
+            padding: 30px 20px;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            font-weight: 300;
+        }
+
+        .header p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+
+        .main-content {
+            padding: 20px;
+        }
+
+        .intro-section {
+            background: #4a2c7a;
+            padding: 25px 20px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+            border: 1px solid #ffd700;
+            text-align: center;
+        }
+
+        .intro-section h2 {
+            color: #e0e0e0;
+            margin-bottom: 15px;
+            font-size: 1.5rem;
+        }
+
+        .intro-section p {
+            color: #b8b8b8;
+            font-size: 1.1rem;
+            line-height: 1.6;
+        }
+
+        .personal-info {
+            background: linear-gradient(135deg, #4a2c7a 0%, #6a3c9a 100%);
+            padding: 30px 20px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+            border: 1px solid #ffd700;
+            text-align: center;
+        }
+
+        .personal-info h2 {
+            color: #ffd700;
+            margin-bottom: 20px;
+            font-size: 1.8rem;
+        }
+
+        .personal-info h3 {
+            color: #e0e0e0;
+            margin-bottom: 15px;
+            font-size: 1.4rem;
+        }
+
+        .personal-info p {
+            color: #b8b8b8;
+            font-size: 1.1rem;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .social-link {
+            background: linear-gradient(135deg, #8a2be2 0%, #ffd700 100%);
+            color: white;
+            text-decoration: none;
+            padding: 12px 25px;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .social-link:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(138, 43, 226, 0.4);
+        }
+
+        .assignments-section {
+            margin-top: 30px;
+        }
+
+        .assignments-section h2 {
+            color: #e0e0e0;
+            margin-bottom: 20px;
+            font-size: 1.5rem;
+            text-align: center;
+        }
+
+        .assignments-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 20px;
+        }
+
+        .assignment-card {
+            background: #4a2c7a;
+            border: 1px solid #ffd700;
+            border-radius: 12px;
+            padding: 25px;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            position: relative;
+            text-align: center;
+        }
+
+        .assignment-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+            border-color: #8a2be2;
+        }
+
+        .assignment-card h3 {
+            color: #e0e0e0;
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+        }
+
+        .assignment-card p {
+            color: #b8b8b8;
+            margin-bottom: 20px;
+            font-size: 1rem;
+            line-height: 1.5;
+        }
+
+        .project-logo {
+            width: 60px;
+            height: 60px;
+            margin: 0 auto 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 10px;
+            font-size: 2rem;
+            font-weight: bold;
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        .chapter-badge {
+            background: linear-gradient(135deg, #8a2be2 0%, #ffd700 100%);
+            color: white;
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            display: inline-block;
+            margin-bottom: 15px;
+        }
+
+        .view-btn {
+            background: linear-gradient(135deg, #8a2be2 0%, #ffd700 100%);
+            color: white;
+            text-decoration: none;
+            padding: 12px 25px;
+            border-radius: 8px;
+            font-weight: 600;
+            display: inline-block;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .view-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(138, 43, 226, 0.4);
+        }
+
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .stat-card {
+            background: linear-gradient(135deg, #8a2be2 0%, #ffd700 100%);
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        .stat-card h3 {
+            font-size: 2rem;
+            margin-bottom: 5px;
+        }
+
+        .stat-card p {
+            opacity: 0.9;
+            font-size: 0.9rem;
+        }
+
+        .footer {
+            background: #4a2c7a;
+            padding: 30px 20px;
+            text-align: center;
+            border-top: 1px solid #ffd700;
+            margin-top: 30px;
+        }
+
+        .footer h3 {
+            color: #ffd700;
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+        }
+
+        .footer p {
+            color: #b8b8b8;
+            font-size: 0.9rem;
+            margin-bottom: 10px;
+        }
+
+        .footer .contact-info {
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 215, 0, 0.3);
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding: 5px;
+            }
+
+            .container {
+                margin: 5px;
+                border-radius: 10px;
+            }
+
+            .header {
+                padding: 20px 15px;
+            }
+
+            .header h1 {
+                font-size: 1.8rem;
+            }
+
+            .header p {
+                font-size: 1rem;
+            }
+
+            .main-content {
+                padding: 15px;
+            }
+
+            .intro-section,
+            .personal-info {
+                padding: 20px 15px;
+            }
+
+            .assignments-grid {
+                grid-template-columns: 1fr;
+                gap: 15px;
+            }
+
+            .assignment-card {
+                padding: 20px;
+            }
+
+            .stats {
+                grid-template-columns: 1fr;
+                gap: 15px;
+            }
+
+            .stat-card {
+                padding: 15px;
+            }
+
+            .stat-card h3 {
+                font-size: 1.5rem;
+            }
+
+            .social-links {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .header h1 {
+                font-size: 1.5rem;
+            }
+
+            .intro-section h2,
+            .assignments-section h2,
+            .personal-info h2 {
+                font-size: 1.3rem;
+            }
+
+            .assignment-card h3 {
+                font-size: 1.1rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🚀 Web Development Portfolio</h1>
+            <p>Showcasing my complete web development journey and projects</p>
+        </div>
+
+        <div class="main-content">
+            <!-- Personal Information Section -->
+            <div class="personal-info">
+                <h2>👨‍💻 About Me</h2>
+                <h3>Your Name</h3>
+                <p>
+                    I am a passionate Software Engineering student with a strong foundation in web development
+                    technologies.
+                    I specialize in creating responsive, user-friendly web applications using modern technologies like
+                    HTML,
+                    CSS, JavaScript, and Firebase. My journey in software development has been driven by curiosity and
+                    a desire to build innovative solutions that make a difference.
+                </p>
+                <div class="social-links">
+                    <a href="https://github.com/yourusername" target="_blank" class="social-link">
+                        <span>🐙</span> GitHub
+                    </a>
+                    <a href="mailto:your.email@example.com" class="social-link">
+                        <span>📧</span> Email
+                    </a>
+                </div>
+            </div>
+
+            <!-- Statistics Section -->
+            <div class="stats">
+                <div class="stat-card">
+                    <h3>11</h3>
+                    <p>Projects Built</p>
+                </div>
+                <div class="stat-card">
+                    <h3>4</h3>
+                    <p>Technologies Used</p>
+                </div>
+                <div class="stat-card">
+                    <h3>100%</h3>
+                    <p>Code Quality</p>
+                </div>
+            </div>
+
+            <!-- Introduction Section -->
+            <div class="intro-section">
+                <h2>🌟 Welcome to My Web Development Portfolio</h2>
+                <p>
+                    This portfolio showcases my complete web development journey including HTML, CSS, JavaScript
+                    , and full-stack projects like Amazon and YouTube clones. Each project demonstrates my learning
+                    different concepts and techniques learned throughout my development journey.
+                </p>
+            </div>
+
+            <!-- Assignments List -->
+            <div class="assignments-section">
+                <h2>📋 My Projects</h2>
+
+                <div class="assignments-grid">
+                    <!-- Amazon Clone -->
+                    <div class="assignment-card">
+                        <div class="project-logo">
+                            <img src="amazonclone/amazon_logo.png" alt="Amazon Logo"
+                                style="width: 100%; height: 100%; object-fit: contain;">
+                        </div>
+                        <div class="chapter-badge">Full-Stack Project</div>
+                        <h3>Amazon Clone</h3>
+                        <p>
+                            A complete Amazon e-commerce clone with product listings, shopping cart functionality,
+                            and responsive design. Features modern UI/UX with product images and interactive elements.
+                        </p>
+                        <a href="amazonclone/index.html" target="_blank" class="view-btn">View Project</a>
+                    </div>
+
+                    <!-- YouTube Clone -->
+                    <div class="assignment-card">
+                        <div class="project-logo">
+                            <span style="color: white; font-size: 2.5rem;">▶️</span>
+                        </div>
+                        <div class="chapter-badge">Full-Stack Project</div>
+                        <h3>YouTube Clone</h3>
+                        <p>
+                            A YouTube video platform clone with video grid layout, responsive design, and modern
+                            interface. Includes video thumbnails, descriptions, and user-friendly navigation.
+                        </p>
+                        <a href="youtubeclone/index.html" target="_blank" class="view-btn">View Project</a>
+                    </div>
+
+                    <!-- Chapter 1 Assignment -->
+                    <div class="assignment-card">
+                        <div class="project-logo">📄</div>
+                        <div class="chapter-badge">Chapter 1</div>
+                        <h3>HTML Basics</h3>
+                        <p>
+                            Introduction to HTML fundamentals including basic structure, elements,
+                            and semantic markup. This project demonstrates core HTML concepts and
+                            proper document structure.
+                        </p>
+                        <a href="C1/index.html" target="_blank" class="view-btn">View Project</a>
+                    </div>
+
+                    <!-- Chapter 4 Assignment -->
+                    <div class="assignment-card">
+                        <div class="project-logo">🌐</div>
+                        <div class="chapter-badge">Chapter 4</div>
+                        <h3>Advanced HTML</h3>
+                        <p>
+                            Advanced HTML concepts including multiple pages, forms, and enhanced
+                            structure. Features multiple HTML pages with navigation and interactive elements.
+                        </p>
+                        <a href="CH#04/index.html" target="_blank" class="view-btn">View Project</a>
+                    </div>
+
+                    <!-- Chapter 7 Forms Assignment -->
+                    <div class="assignment-card">
+                        <div class="project-logo">📝</div>
+                        <div class="chapter-badge">Chapter 7</div>
+                        <h3>HTML Forms</h3>
+                        <p>
+                            Comprehensive form implementation with various input types, validation,
+                            and user interaction. Demonstrates form design and user experience principles.
+                        </p>
+                        <a href="Ch#07(Forms)/index.html" target="_blank" class="view-btn">View Project</a>
+                    </div>
+
+                    <!-- CSS Lesson 1 -->
+                    <div class="assignment-card">
+                        <div class="project-logo">🎨</div>
+                        <div class="chapter-badge">CSS Basics</div>
+                        <h3>CSS Styling</h3>
+                        <p>
+                            Introduction to CSS styling including selectors, properties, and layout techniques.
+                            Demonstrates modern CSS practices and responsive design principles.
+                        </p>
+                        <a href="CSS/lesson1/index.html" target="_blank" class="view-btn">View Project</a>
+                    </div>
+
+                    <!-- HTML CSS Chapters 13-16 -->
+                    <div class="assignment-card">
+                        <div class="project-logo">✨</div>
+                        <div class="chapter-badge">Chapters 13-16</div>
+                        <h3>Advanced CSS</h3>
+                        <p>
+                            Advanced CSS concepts including layouts, animations, and modern styling techniques.
+                            Features responsive design and interactive elements with external CSS.
+                        </p>
+                        <a href="HTML_CSS(Chap13-16)/index.html" target="_blank" class="view-btn">View Project</a>
+                    </div>
+
+                    <!-- JavaScript Chapter 1-3 -->
+                    <div class="assignment-card">
+                        <div class="project-logo">⚡</div>
+                        <div class="chapter-badge">JS Chapters 1-3</div>
+                        <h3>JavaScript Fundamentals</h3>
+                        <p>
+                            Core JavaScript concepts including variables, data types, operators, and basic
+                            programming constructs. Demonstrates fundamental JavaScript syntax and logic.
+                        </p>
+                        <a href="JavaScript/Chapter1-3/index.html" target="_blank" class="view-btn">View Project</a>
+                    </div>
+
+                    <!-- JavaScript Chapter 4-9 -->
+                    <div class="assignment-card">
+                        <div class="project-logo">🚀</div>
+                        <div class="chapter-badge">JS Chapters 4-9</div>
+                        <h3>Advanced JavaScript</h3>
+                        <p>
+                            Advanced JavaScript concepts including functions, objects, arrays, DOM manipulation,
+                            and event handling. Showcases interactive web development techniques.
+                        </p>
+                        <a href="JavaScript/Chapter4-9/index.html" target="_blank" class="view-btn">View Project</a>
+                    </div>
+
+                    <!-- Firebase Project -->
+                    <div class="assignment-card">
+                        <div class="project-logo">🔥</div>
+                        <div class="chapter-badge">Firebase</div>
+                        <h3>Firebase Integration</h3>
+                        <p>
+                            Firebase backend integration with authentication and database functionality.
+                            Demonstrates modern web app development with cloud services and user management.
+                        </p>
+                        <a href="FireBase/index.html" target="_blank" class="view-btn">View Project</a>
+                    </div>
+
+                    <!-- Modern Login Form -->
+                    <div class="assignment-card">
+                        <div class="project-logo">🔐</div>
+                        <div class="chapter-badge">Modern UI</div>
+                        <h3>Modern Login Form</h3>
+                        <p>
+                            Contemporary login and signup forms with modern design principles. Features
+                            responsive design, smooth animations, and professional user interface.
+                        </p>
+                        <a href="ModernLoginForm/index.html" target="_blank" class="view-btn">View Project</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Footer -->
+            <div class="footer">
+                <h3>Abdul Rafay</h3>
+                <p>Software Engineering Student @ FAST NUCES Karachi</p>
+                <p>Passionate about creating innovative web solutions</p>
+                <div class="contact-info">
+                    <p>📧 abdulrafay14021997@gmail.com</p>
+                    <p>🐙 github.com/abdulrafay1402</p>
+                    <p>© 2024 Web Development Portfolio | Built with HTML, CSS, JavaScript & Firebase</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
