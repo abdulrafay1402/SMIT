@@ -1,0 +1,222 @@
+* { 
+    box-sizing: border-box; 
+    margin: 0; 
+    padding: 0; 
+} 
+
+body { 
+    font-family: Helvetica, Arial, sans-serif; 
+    background-color: #f0f2f5; 
+} 
+
+header { 
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    height: 80px; 
+    background-color: #f0f2f5; 
+    color: #0866ff; 
+    font-weight: bold; 
+    padding: 0 20px; 
+} 
+
+.logo { 
+    font-size: 60px; 
+    font-weight: bold; 
+    color: #0866ff; 
+    margin: 40px 0 10px; 
+    text-align: center; 
+} 
+
+.container { 
+    background-color: #fff; 
+    width: 480px; 
+    height: auto;
+    margin: 0 auto; 
+    padding: 20px 16px; 
+    border-radius: 8px; 
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+    margin-top: 20px; 
+} 
+
+h2 { 
+    font-size: 22px; 
+    font-weight: 600; 
+    color: #1c1e21; 
+    text-align: center; 
+    margin-bottom: 20px; 
+} 
+
+form { 
+    display: flex; 
+    flex-direction: column; 
+    gap: 12px; 
+} 
+
+input[type="text"] { 
+    width: 47%;
+    height: 40px;
+    font-size: 17px; 
+    border: 1px solid #ccd0d5; 
+    border-radius: 6px; 
+    background-color: #ffffff; 
+    padding: 0 10px; 
+    outline: none;
+} 
+input:focus , .date-of-birth > select:focus { 
+    border : 2px solid #000000;
+}
+
+#create-button { 
+    background-color: #42b72a; 
+    color: white; 
+    border: none; 
+    padding: 12px 20px; 
+    font-size: 17px; 
+    font-weight: bold; 
+    border-radius: 6px; 
+    cursor: pointer; 
+    margin-top: 14px; 
+    margin-bottom: -10px;
+    width: 200px; 
+    align-self: center; 
+} 
+
+#create-button:hover { 
+    background-color: #36a420; 
+} 
+.already{
+    margin-top: 5px;
+    font-size: 16px;
+}
+
+p { 
+    font-size: 14px; 
+    color: #606770; 
+    margin-top: 16px; 
+    text-align: center; 
+} 
+
+a { 
+    color: #0866ff; 
+    text-decoration: none; 
+} 
+
+a:hover { 
+    text-decoration: underline; 
+} 
+.Create-acc {
+    text-align: center;
+    margin-bottom: 10px;
+    align-items: center;
+    align-content: center;
+    display: flex;
+    flex-direction: column;
+    padding: 0 20px;
+}
+.quick{
+    font-size: 16px;
+    color: #606770;
+    margin-top: -10px;
+    margin-bottom: -10px;
+}
+.name {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+}
+.DOB , .Gender{
+    display: flex;
+    justify-content: flex-start;
+    margin-top: 0;
+    padding-left: 10px;
+}
+.date-of-birth {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+}
+.date-of-birth > select{
+    width: 30%;
+    height: 40px;
+    font-size: 17px;
+    border: 1px solid #ccd0d5;
+    border-radius: 6px;
+    background-color: #ffffff;
+    padding: 0 10px;
+    outline: none;
+}
+.gender{
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    margin-top: 8px;
+}
+.Male , .Female , .Other {
+    width: 30%;
+    height: 40px;
+    font-size: 17px;
+    border: 1px solid #ccd0d5;
+    border-radius: 6px;
+    background-color: #ffffff;
+    padding: 0 10px;
+    outline: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center
+}
+.Email-Pass {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+.email , .password {
+    width: 100%;
+    height: 40px;
+    font-size: 17px;
+    border: 1px solid #ccd0d5;
+    border-radius: 6px;
+    background-color: #ffffff;
+    padding: 0 10px;
+    outline: none;
+}
+
+@media only screen and (max-width: 600px) {
+    .container {
+        width: 90%;
+    }
+    .logo {
+        font-size: 48px;
+    }
+    input[type="text"], .date-of-birth > select, .email, .password {
+        width: 100%;
+    }
+    #create-button {
+        width: 100%;
+    }
+    .name {
+        flex-direction: column;
+    }
+}
+@media only screen and (max-width: 400px) {
+    .container {
+        width: 95%;
+    }
+    .logo {
+        font-size: 40px;
+    }
+    input[type="text"], .date-of-birth > select, .email, .password {
+        width: 100%;
+    }
+    #create-button {
+        width: 100%;
+    }
+    .name {
+        flex-direction: column;
+    }
+    .Male , .Female , .Other {
+        font-size: small;
+        font-weight: normal;
+    }
+}
