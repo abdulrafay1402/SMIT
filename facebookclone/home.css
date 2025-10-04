@@ -1239,6 +1239,30 @@ nav {
   text-overflow: ellipsis;
 }
 
+/* Hide text labels on small devices for post action buttons */
+@media screen and (max-width: 768px) {
+    .post-actions .post-action span {
+        display: none;
+    }
+    
+    .post-actions {
+        display: flex;
+        flex-direction: row !important; /* Force horizontal layout */
+        gap: 0;
+    }
+    
+    .post-actions .post-action {
+        flex: 1;
+        justify-content: center;
+    }
+    
+    .post-actions .post-action i {
+        margin-right: 0;
+        font-size: 20px;
+    }
+}
+
+
 /* Character Counter */
 .char-counter {
   text-align: right;
