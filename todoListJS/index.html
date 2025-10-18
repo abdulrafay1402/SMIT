@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Todo List</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+    integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Poppins", sans-serif;
+    }
+
+    body {
+      background: linear-gradient(135deg, #89f7fe, #66a6ff);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .todoBox {
+      width: 400px;
+      min-height: 450px;
+      background: #ffffff;
+      border-radius: 20px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+      padding: 25px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: all 0.3s ease;
+    }
+
+    .todoBox:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 25px;
+      font-family: "Poppins", sans-serif;
+      color: #333;
+      letter-spacing: 1px;
+    }
+
+    .inputBox {
+      display: flex;
+      align-items: center;
+      background-color: #ffb74d;
+      height: 50px;
+      border-radius: 30px;
+      margin-bottom: 20px;
+      overflow: hidden;
+      box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    .inputBox>input {
+      width: 70%;
+      height: 100%;
+      border: none;
+      border-radius: 30px 0 0 30px;
+      padding-left: 20px;
+      font-size: 15px;
+      background-color: #fff;
+      color: #333;
+    }
+
+    .inputBox>input:focus {
+      outline: none;
+    }
+
+    .inputBox>button {
+      width: 30%;
+      height: 100%;
+      border: none;
+      background-color: #ff9800;
+      color: white;
+      font-weight: bold;
+      cursor: pointer;
+      font-size: 16px;
+      transition: background 0.3s ease;
+    }
+
+    .inputBox>button:hover {
+      background-color: #f57c00;
+    }
+
+    ul {
+      list-style: none;
+      flex-grow: 1;
+      overflow-y: auto;
+      margin-bottom: 15px;
+      padding-right: 5px;
+    }
+
+    ul::-webkit-scrollbar {
+      width: 6px;
+    }
+
+    ul::-webkit-scrollbar-thumb {
+      background-color: rgba(0, 0, 0, 0.2);
+      border-radius: 3px;
+    }
+
+    ul>li {
+      background-color: #f9f9f9;
+      margin-bottom: 12px;
+      box-shadow: rgba(0, 0, 0, 0.1) 0px 3px 8px;
+      padding: 10px 15px;
+      border-radius: 25px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      transition: all 0.3s ease;
+    }
+
+    ul>li:hover {
+      background-color: #e3f2fd;
+      transform: scale(1.02);
+    }
+
+    ul>li i {
+      color: #f44336;
+      cursor: pointer;
+      font-size: 18px;
+      transition: transform 0.2s ease;
+    }
+
+    ul>li i:hover {
+      transform: scale(1.2);
+      color: #d32f2f;
+    }
+
+    .delete {
+      width: 100%;
+      background-color: #f44336;
+      border-radius: 30px;
+      height: 45px;
+      color: white;
+      border: none;
+      cursor: pointer;
+      font-size: 16px;
+      font-weight: bold;
+      transition: background 0.3s ease, transform 0.2s;
+    }
+
+    .delete:hover {
+      background-color: #d32f2f;
+      transform: translateY(-2px);
+    }
+  </style>
+</head>
+
+<body>
+  <div class="todoBox">
+    <h1>✨ Todo App ✨</h1>
+
+    <div class="inputBox">
+      <input type="text" placeholder="Enter your task..." id="todoText">
+      <button onclick="addTodoItems()"><i class="fa-solid fa-plus"></i> Add</button>
+    </div>
+
+    <ul id="todoList">
+      <!-- Todo items appear here -->
+    </ul>
+
+    <button class="delete" onclick="deleteAllTodoElem()">
+      <i class="fa-solid fa-trash-can"></i> Delete All
+    </button>
+  </div>
+
+  <script src="app.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</body>
+
+</html>
