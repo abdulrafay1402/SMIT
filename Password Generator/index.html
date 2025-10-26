@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Password Generator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>SecurePass</h1>
+        <p class="subtitle">Generate ultra-secure passwords instantly</p>
+        
+        <div class="length-control">
+            <div class="length-label-row">
+                <label for="lengthSlider">Password Length</label>
+                <div class="length-display" id="lengthDisplay">12</div>
+            </div>
+            <input type="range" id="lengthSlider" min="4" max="50" value="12">
+        </div>
+
+        <div class="password-display" id="passwordDisplay">Generate Password...</div>
+
+        <div class="options">
+            <div class="option">
+                <input type="checkbox" id="lowercase" checked>
+                <label for="lowercase">Lowercase (a-z)</label>
+            </div>
+
+            <div class="option">
+                <input type="checkbox" id="uppercase" checked>
+                <label for="uppercase">Uppercase (A-Z)</label>
+            </div>
+
+            <div class="option">
+                <input type="checkbox" id="digits" checked>
+                <label for="digits">Numbers (0-9)</label>
+            </div>
+
+            <div class="option">
+                <input type="checkbox" id="symbols" checked>
+                <label for="symbols">Symbols (!@#$%...)</label>
+            </div>
+        </div>
+
+        <button class="copy-btn" id="copyBtn">📋 Copy to Clipboard</button>
+        <div class="copy-feedback" id="copyFeedback">✓ Copied successfully!</div>
+    </div>
+
+   <script src="app.js"></script>
+</body>
+</html>
