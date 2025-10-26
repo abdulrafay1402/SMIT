@@ -3,10 +3,67 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Student Management System</title>
 </head>
 <body>
+    <h1>Sign up form</h1>
+    <div id="form">
+        <input type="email" id="input" placeholder="Email"/>
+        <input type="password" id="password" placeholder="Password"/>
+        <button id="btn" onclick="submitForm()">Submit</button>
+    </div>
+
+    <hr>
+
+    <div id="content">
+        <h2>Content Area</h2>
+        <input type="text" id="textInput" placeholder="Type something..."/>
+        <button id="addTextBtn" onclick="save()">Add Text</button>
+    </div>
+
+    <hr>
+
+    <!-- Task 3: Student Table with CRUD -->
+    <section>
+        <h2>3. Student Details Manager</h2>
+        
+        <form id="studentForm">
+            <input type="text" id="studentName" placeholder="Student Name" required><br><br>
+            <input type="text" id="studentRoll" placeholder="Roll Number" required><br><br>
+            <input type="text" id="studentClass" placeholder="Class" required><br><br>
+            <input type="text" id="studentAge" placeholder="Age" required><br><br>
+            <button type="submit">Add Student</button>
+        </form>
+
+        <div id="editFormContainer" style="display: none;">
+            <h3>Edit Student</h3>
+            <form id="editForm">
+                <input type="hidden" id="editIndex">
+                <input type="text" id="editName" placeholder="Student Name" required><br><br>
+                <input type="text" id="editRoll" placeholder="Roll Number" required><br><br>
+                <input type="text" id="editClass" placeholder="Class" required><br><br>
+                <input type="text" id="editAge" placeholder="Age" required><br><br>
+                <button type="submit">Update Student</button>
+                <button type="button" onclick="cancelEdit()">Cancel</button>
+            </form>
+        </div>
+
+        <h3>Student List</h3>
+        <table id="studentTable" border="1" cellpadding="10">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Roll Number</th>
+                    <th>Class</th>
+                    <th>Age</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody id="studentTableBody">
+            </tbody>
+        </table>
+    </section>
+
     <script src="app.js"></script>
 </body>
 </html>
-
