@@ -1,253 +1,253 @@
 * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-      }
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-      body {
-        min-height: 100vh;
-        background: linear-gradient(135deg, #008b8b 0%, #20b2aa 100%);
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        padding: 20px;
-        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-      }
+body {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #008b8b 0%, #20b2aa 100%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
 
-      .container-main {
-        display: flex;
-        gap: 40px;
-        flex-wrap: wrap;
-        justify-content: center;
-        align-items: flex-start;
-        max-width: 1200px;
-      }
+.container-main {
+  display: flex;
+  gap: 40px;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
+  max-width: 1200px;
+}
 
-      .form-container {
-        width: 420px;
-        background: white;
-        border-radius: 20px;
-        padding: 40px;
-        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
-      }
+.form-container {
+  width: 420px;
+  background: white;
+  border-radius: 20px;
+  padding: 40px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+}
 
-      .form-container h1 {
-        font-size: 28px;
-        font-weight: 700;
-        margin-bottom: 30px;
-        color: #333;
-        text-align: center;
-        background: linear-gradient(135deg, #008b8b 0%, #20b2aa 100%);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-      }
+.form-container h1 {
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 30px;
+  color: #333;
+  text-align: center;
+  background: linear-gradient(135deg, #008b8b 0%, #20b2aa 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
 
-      .form-group {
-        margin-bottom: 20px;
-      }
+.form-group {
+  margin-bottom: 20px;
+}
 
-      .form-group label {
-        font-weight: 600;
-        color: #555;
-        margin-bottom: 8px;
-        display: block;
-        font-size: 14px;
-      }
+.form-group label {
+  font-weight: 600;
+  color: #555;
+  margin-bottom: 8px;
+  display: block;
+  font-size: 14px;
+}
 
-      .form-group input {
-        width: 100%;
-        padding: 12px 15px;
-        border: 2px solid #e0e0e0;
-        border-radius: 10px;
-        font-size: 14px;
-        transition: all 0.3s ease;
-      }
+.form-group input {
+  width: 100%;
+  padding: 12px 15px;
+  border: 2px solid #e0e0e0;
+  border-radius: 10px;
+  font-size: 14px;
+  transition: all 0.3s ease;
+}
 
-      .form-group input:focus {
-        outline: none;
-        border-color: #008b8b;
-        box-shadow: 0 0 0 3px rgba(0, 139, 139, 0.1);
-      }
+.form-group input:focus {
+  outline: none;
+  border-color: #008b8b;
+  box-shadow: 0 0 0 3px rgba(0, 139, 139, 0.1);
+}
 
-      .file-input-wrapper {
-        position: relative;
-        overflow: hidden;
-        display: inline-block;
-        width: 100%;
-      }
+.file-input-wrapper {
+  position: relative;
+  overflow: hidden;
+  display: inline-block;
+  width: 100%;
+}
 
-      .file-input-wrapper input[type="file"] {
-        display: none;
-      }
+.file-input-wrapper input[type="file"] {
+  display: none;
+}
 
-      .file-input-label {
-        display: block;
-        padding: 12px 15px;
-        background: #f8f9fa;
-        border: 2px dashed #008b8b;
-        border-radius: 10px;
-        cursor: pointer;
-        text-align: center;
-        transition: all 0.3s ease;
-        color: #008b8b;
-        font-weight: 600;
-      }
+.file-input-label {
+  display: block;
+  padding: 12px 15px;
+  background: #f8f9fa;
+  border: 2px dashed #008b8b;
+  border-radius: 10px;
+  cursor: pointer;
+  text-align: center;
+  transition: all 0.3s ease;
+  color: #008b8b;
+  font-weight: 600;
+}
 
-      .file-input-label:hover {
-        background: #e0f2f1;
-        border-color: #20b2aa;
-      }
+.file-input-label:hover {
+  background: #e0f2f1;
+  border-color: #20b2aa;
+}
 
-      .file-name {
-        font-size: 13px;
-        color: #666;
-        margin-top: 5px;
-      }
+.file-name {
+  font-size: 13px;
+  color: #666;
+  margin-top: 5px;
+}
 
-      .btn-generate {
-        width: 100%;
-        padding: 14px;
-        background: linear-gradient(135deg, #008b8b 0%, #20b2aa 100%);
-        color: white;
-        border: none;
-        border-radius: 10px;
-        font-weight: 700;
-        font-size: 16px;
-        cursor: pointer;
-        transition: all 0.3s ease;
-        margin-top: 20px;
-      }
+.btn-generate {
+  width: 100%;
+  padding: 14px;
+  background: linear-gradient(135deg, #008b8b 0%, #20b2aa 100%);
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-weight: 700;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 20px;
+}
 
-      .btn-generate:hover {
-        transform: translateY(-2px);
-        box-shadow: 0 10px 25px rgba(0, 139, 139, 0.4);
-      }
+.btn-generate:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(0, 139, 139, 0.4);
+}
 
-      .btn-generate:active {
-        transform: translateY(0);
-      }
+.btn-generate:active {
+  transform: translateY(0);
+}
 
-      .id-card-container {
-        min-width: 320px;
-      }
+.id-card-container {
+  min-width: 320px;
+}
 
-      .id-card {
-        width: 340px;
-        height: 540px;
-        background: linear-gradient(135deg, #ffffff 0%, #f8f9ff 100%);
-        border-radius: 20px;
-        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
-        padding: 30px 25px;
-        position: relative;
-        overflow: hidden;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        border: 1px solid rgba(0, 139, 139, 0.2);
-      }
+.id-card {
+  width: 340px;
+  height: 540px;
+  background: linear-gradient(135deg, #ffffff 0%, #f8f9ff 100%);
+  border-radius: 20px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  padding: 30px 25px;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 1px solid rgba(0, 139, 139, 0.2);
+}
 
-      .id-card::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        height: 8px;
-        background: linear-gradient(90deg, #008b8b 0%, #20b2aa 100%);
-      }
+.id-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 8px;
+  background: linear-gradient(90deg, #008b8b 0%, #20b2aa 100%);
+}
 
-      .id-header {
-        text-align: center;
-        margin-bottom: 20px;
-        width: 100%;
-        color: #008b8b;
-        font-weight: 700;
-        letter-spacing: 1px;
-        font-size: 12px;
-      }
+.id-header {
+  text-align: center;
+  margin-bottom: 20px;
+  width: 100%;
+  color: #008b8b;
+  font-weight: 700;
+  letter-spacing: 1px;
+  font-size: 12px;
+}
 
-      .profile-section {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        margin-bottom: 25px;
-      }
+.profile-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 25px;
+}
 
-      .profile-image-wrapper {
-        width: 140px;
-        height: 140px;
-        background: linear-gradient(135deg, #008b8b 0%, #20b2aa 100%);
-        border-radius: 50%;
-        padding: 4px;
-        box-shadow: 0 10px 30px rgba(0, 139, 139, 0.3);
-        margin-bottom: 15px;
-      }
+.profile-image-wrapper {
+  width: 140px;
+  height: 140px;
+  background: linear-gradient(135deg, #008b8b 0%, #20b2aa 100%);
+  border-radius: 50%;
+  padding: 4px;
+  box-shadow: 0 10px 30px rgba(0, 139, 139, 0.3);
+  margin-bottom: 15px;
+}
 
-      .profile-image-wrapper img {
-        width: 100%;
-        height: 100%;
-        border-radius: 50%;
-        object-fit: cover;
-        display: block;
-        background: white;
-      }
+.profile-image-wrapper img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+  display: block;
+  background: white;
+}
 
-      .info-section {
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-        gap: 12px;
-      }
+.info-section {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
 
-      .info-item {
-        display: flex;
-        flex-direction: column;
-        gap: 3px;
-      }
+.info-item {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
 
-      .info-label {
-        font-size: 11px;
-        font-weight: 700;
-        color: #008b8b;
-        text-transform: uppercase;
-        letter-spacing: 0.5px;
-      }
+.info-label {
+  font-size: 11px;
+  font-weight: 700;
+  color: #008b8b;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
 
-      .info-value {
-        font-size: 14px;
-        font-weight: 600;
-        color: #333;
-        word-break: break-word;
-      }
+.info-value {
+  font-size: 14px;
+  font-weight: 600;
+  color: #333;
+  word-break: break-word;
+}
 
-      .divider {
-        height: 1px;
-        background: linear-gradient(90deg, transparent, #008b8b, transparent);
-        margin: 8px 0;
-      }
+.divider {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #008b8b, transparent);
+  margin: 8px 0;
+}
 
-      .id-footer {
-        margin-top: auto;
-        text-align: center;
-        font-size: 10px;
-        color: #999;
-        width: 100%;
-      }
+.id-footer {
+  margin-top: auto;
+  text-align: center;
+  font-size: 10px;
+  color: #999;
+  width: 100%;
+}
 
-      @media (max-width: 768px) {
-        .container-main {
-          flex-direction: column;
-          gap: 30px;
-          align-items: center;
-        }
+@media (max-width: 768px) {
+  .container-main {
+    flex-direction: column;
+    gap: 30px;
+    align-items: center;
+  }
 
-        .form-container {
-          width: 100%;
-          max-width: 400px;
-        }
+  .form-container {
+    width: 100%;
+    max-width: 400px;
+  }
 
-        .id-card {
-          width: 100%;
-          max-width: 340px;
-        }
-      }
+  .id-card {
+    width: 100%;
+    max-width: 340px;
+  }
+}
