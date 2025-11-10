@@ -1,15 +1,108 @@
-// Simplified Facebook Clone - Post Creation
+window.addEventListener('DOMContentLoaded', () => {
+    const currentUser = JSON.parse(localStorage.getItem('currentUser'));
+    
+    if (window.location.pathname.includes('home.html')) {
+        if (!currentUser) {
+            alert("Please log in to continue.");
+            window.location.href = "index.html";
+            return;
+        }
+        
+        const userName = currentUser.firstName;
+        const fullName = currentUser.fullName;
+        
+        document.querySelectorAll('.user-profile span').forEach(el => {
+            if (el.textContent.includes('Abdul Rafay')) {
+                el.textContent = fullName;
+            }
+        });
+        
+        document.querySelectorAll('.post-author').forEach(el => {
+            if (el.textContent.includes('Abdul Rafay')) {
+                el.textContent = fullName;
+            }
+        });
+        
+        document.querySelectorAll('.user-name').forEach(el => {
+            if (el.textContent.includes('Abdul')) {
+                el.textContent = fullName;
+            }
+        });
+        
+        const postInputBtn = document.querySelector('.post-input-btn');
+        if (postInputBtn) {
+            postInputBtn.textContent = `What's on your mind, ${userName}?`;
+        }
+        
+        const postTextarea = document.querySelector('.post-textarea');
+        if (postTextarea) {
+            postTextarea.placeholder = `What's on your mind, ${userName}?`;
+        }
+    }
+    
+    if (currentUser && window.location.pathname.includes('index.html')) {
+        window.location.href = "home.html";
+    }
+});
+
 const login = () => {
-    const email = document.getElementById('email-input').value;
-    const password = document.getElementById('password-input').value;
-    // Perform login logic here
-    if(email === "abdulrafay1402@hotmail.com" && password === "abcd1234"){  
-        window.location.href = "home.html"; // Redirect to home page on successful login
+    const email = document.getElementById('email-input').value.trim();
+    const password = document.getElementById('password-input').value.trim();
+    
+    if (email === "") {
+        alert("Please enter your email address.");
+        return;
+    }
+    
+    if (password === "") {
+        alert("Please enter your password.");
+        return;
+    }
+    
+    const users = JSON.parse(localStorage.getItem('users')) || [];
+    
+    if (users.length === 0) {
+        alert("No account found. Please sign up first.");
+        return;
+    }
+    
+    const user = users.find(u => 
+        u.email.toLowerCase() === email.toLowerCase() && 
+        u.password === password
+    );
+    
+    if (user) {
+        localStorage.setItem('currentUser', JSON.stringify(user));
+        alert("Login successful! Welcome back, " + user.firstName + "!");
+        window.location.href = "home.html";
     } else {
-        alert("Invalid email or password");
+        const emailExists = users.some(u => u.email.toLowerCase() === email.toLowerCase());
+        
+        if (emailExists) {
+            alert("Invalid password. Please try again.");
+        } else {
+            alert("No account found with this email. Please sign up.");
+        }
     }
 }
+
+function logout() {
+    if (confirm("Are you sure you want to log out?")) {
+        localStorage.removeItem('currentUser');
+        alert("You have been logged out successfully.");
+        window.location.href = "index.html";
+    }
+}
+
 const createPost = () => {
+    const currentUser = JSON.parse(localStorage.getItem('currentUser'));
+    
+    if (!currentUser) {
+        alert("Please log in to create a post.");
+        window.location.href = "index.html";
+        return;
+    }
+    
     const profileImage = "profile.jpg";
     const postText = document.querySelector('.post-textarea').value.trim();
     const fileInput = document.getElementById('fileInput');
@@ -20,7 +113,6 @@ const createPost = () => {
         return;
     }
 
-    // Create image HTML if file exists
     const imageHTML = file ? `<div class="post-image"><img src="${URL.createObjectURL(file)}" alt="Post image" style="width: 100%; height: auto; max-height: none;" /></div>` : '';
 
     const formattedText = postText.length > 200 
@@ -30,9 +122,9 @@ const createPost = () => {
     document.getElementById('postsContainer').innerHTML = `
     <div class="post">
         <div class="post-header">
-            <img src="${profileImage}" alt="Abdul Rafay" />
+            <img src="${profileImage}" alt="${currentUser.fullName}" />
             <div class="post-info">
-                <span class="post-author">Abdul Rafay</span>
+                <span class="post-author">${currentUser.fullName}</span>
                 <span class="post-time">${new Date().toLocaleString()}</span>
             </div>
             <div class="post-menu">
@@ -69,7 +161,6 @@ const createPost = () => {
         </div>
     </div>` + document.getElementById('postsContainer').innerHTML;
 
-    // Clear form
     document.querySelector('.post-textarea').value = "";
     fileInput.value = "";
     bootstrap.Modal.getInstance(document.getElementById('createPostModal')).hide();
