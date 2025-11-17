@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pakistan Quiz</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="start-screen active">
+            <h1>Pakistan General Knowledge Quiz</h1>
+            <p>Test your knowledge about Pakistan with 10 questions</p>
+            <button onclick="startQuiz()">Start Quiz</button>
+        </div>
+        <div class="quiz-screen">
+            <div class="question-header" id="questionHeader"></div>
+            <h2 class="question-title" id="questionTitle"></h2>
+            <div class="options" id="optionsContainer"></div>
+            <button id="nextBtn" onclick="nextQuestion()" disabled>Next Question</button>
+        </div>
+        <div class="result-screen">
+            <h1>Quiz Completed!</h1>
+            <div class="score-display" id="scoreDisplay"></div>
+            <div class="result-message" id="resultMessage"></div>
+            <div class="percentage" id="percentage"></div>
+            <button onclick="restartQuiz()">Restart Quiz</button>
+        </div>
+    </div>
+
+   <script src="app.js"></script>
+</body>
+</html>
